@@ -4,6 +4,7 @@ buildscript {
     ext{
         kotlinVersion = '1.2.61'
         supportVersion = "1.0.0"
+        appCompatVersion = "1.0.0-alpha1"
         navigationVersion = "1.0.0-alpha07"
         constraintLayoutVersion = "2.0.0-alpha2"
         navigationSafeArgsVersion = "1.0.0-alpha07"
