@@ -1,7 +1,8 @@
 package app.navigation.jetpack.guillermo.example.com.navigationapp
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 
 class MainActivity : AppCompatActivity() {
 
