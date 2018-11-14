@@ -23,9 +23,11 @@ class FormFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        floating_button_confirm_transaction.setOnClickListener {
-            val action = FormFragmentDirections.actionFormFragmentToSubmitFragment()
-            action.setAmount(1000)
+        button_confirm_transaction.setOnClickListener {
+            val action= FormFragmentDirections.actionFormFragmentToSubmitFragment()
+            val inputAmountValue : String = text_input_edit_text_amount.text.toString()
+            if(!inputAmountValue.isBlank()) action.setAmountArg(inputAmountValue.toInt()) else action.setAmountArg(0)
+            action.setConceptArg(text_input_edit_text_concept.text.toString())
             findNavController().navigate(action)
 
         }

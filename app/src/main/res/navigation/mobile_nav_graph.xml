@@ -17,11 +17,6 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
-        <argument
-            android:name="concept"
-            android:defaultValue="test"
-            app:argType="string" />
-
     </fragment>
     <fragment
         android:id="@+id/submit_fragment_destination"
@@ -29,9 +24,16 @@
         android:label="fragment_submit"
         tools:layout="@layout/fragment_submit">
         <argument
-            android:name="amount"
+            android:name="amountArg"
             android:defaultValue="0"
             app:argType="integer" />
+        <argument
+            android:name="conceptArg"
+            android:defaultValue="Not defined"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_submit_fragment_destination_to_result_fragment_destination"
+            app:destination="@id/result_fragment_destination" />
     </fragment>
     <fragment
         android:id="@+id/result_fragment_destination"

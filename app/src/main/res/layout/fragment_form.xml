@@ -3,27 +3,66 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@drawable/fragment_layout_bg"
+    android:elevation="4dp"
+    android:padding="16dp"
     tools:context=".FormFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="8dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="8dp" />
+
+    <TextView
+        android:id="@+id/tv_new_transfer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/new_transfer"
+        android:textSize="@dimen/new_transfer_text_size"
+        app:layout_constraintStart_toStartOf="@+id/startGuideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/main_activity_background_color"
+        app:layout_constraintBottom_toTopOf="@+id/text_input_layout_concept"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_new_transfer" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_input_layout_concept"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginTop="24dp"
         app:counterEnabled="true"
-        app:counterMaxLength="40"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:counterMaxLength="20"
         app:layout_constraintBottom_toTopOf="@+id/text_input_layout_amount"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="@id/endGuideline"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/tv_new_transfer">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/text_input_edit_text_concept"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:hint="Transfer concept" />
+            android:fontFamily="sans-serif"
+            android:hint="Concept"
+            android:maxLength="20"
+            android:maxLines="1" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -31,44 +70,30 @@
         android:id="@+id/text_input_layout_amount"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/endGuideline"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
         app:layout_constraintTop_toBottomOf="@+id/text_input_layout_concept">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/text_input_edit_text_amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
-            android:maxLines="1"
-            android:hint="Amount" />
+            android:fontFamily="sans-serif"
+            android:hint="Amount"
+            android:inputType="number"
+            android:maxLines="1" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <FrameLayout
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_confirm_transaction"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floating_button_confirm_transaction"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:src="@android:color/transparent" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:elevation="6dp"
-            android:includeFontPadding="false"
-            android:text="@android:string/ok"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/white" />
-    </FrameLayout>
+        android:layout_marginTop="24dp"
+        android:text="CONFIRM"
+        app:icon="@drawable/ic_confirm_form"
+        app:layout_constraintEnd_toEndOf="@id/endGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/text_input_layout_amount" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
