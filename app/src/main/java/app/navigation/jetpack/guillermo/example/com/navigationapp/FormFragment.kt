@@ -25,7 +25,7 @@ class FormFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         floating_button_confirm_transaction.setOnClickListener {
             val action = FormFragmentDirections.actionFormFragmentToSubmitFragment()
-//            action.setConceptArg("test")
+            action.setAmount(1000)
             findNavController().navigate(action)
 
         }

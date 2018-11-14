@@ -16,11 +16,6 @@ class ResultFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-
-        val saveArgs = FormFragmentArgs.fromBundle(arguments)
-        saveArgs.conceptArg
-        saveArgs.amountArg
-
         return inflater.inflate(R.layout.fragment_result, container, false)
     }
 

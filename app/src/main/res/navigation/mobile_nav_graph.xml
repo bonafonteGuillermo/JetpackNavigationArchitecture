@@ -10,14 +10,6 @@
         android:name="app.navigation.jetpack.guillermo.example.com.navigationapp.FormFragment"
         android:label="fragment_form"
         tools:layout="@layout/fragment_form">
-        <argument
-            android:name="conceptArg"
-            android:defaultValue="empty"
-            app:argType="string" />
-        <argument
-            android:name="amountArg"
-            android:defaultValue="0"
-            app:argType="integer" />
         <action
             android:id="@+id/action_formFragment_to_submitFragment"
             app:destination="@+id/submit_fragment_destination"
@@ -25,23 +17,26 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="concept"
+            android:defaultValue="test"
+            app:argType="string" />
+
     </fragment>
     <fragment
         android:id="@+id/submit_fragment_destination"
         android:name="app.navigation.jetpack.guillermo.example.com.navigationapp.SubmitFragment"
         android:label="fragment_submit"
         tools:layout="@layout/fragment_submit">
-        <action
-            android:id="@+id/action_submitFragment_to_resultFragment"
-            app:destination="@id/result_fragment_destination" />
+        <argument
+            android:name="amount"
+            android:defaultValue="0"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/result_fragment_destination"
         android:name="app.navigation.jetpack.guillermo.example.com.navigationapp.ResultFragment"
         android:label="fragment_result"
-        tools:layout="@layout/fragment_result" >
-        <action
-            android:id="@+id/action_result_fragment_destination_to_form_fragment_destination"
-            app:destination="@id/form_fragment_destination" />
+        tools:layout="@layout/fragment_result">
     </fragment>
 </navigation>
