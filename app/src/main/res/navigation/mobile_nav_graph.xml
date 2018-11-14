@@ -1,32 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_nav_graph"
-    app:startDestination="@id/formFragment">
+    app:startDestination="@id/form_fragment_destination">
 
     <fragment
-        android:id="@+id/formFragment"
+        android:id="@+id/form_fragment_destination"
         android:name="app.navigation.jetpack.guillermo.example.com.navigationapp.FormFragment"
         android:label="fragment_form"
-        tools:layout="@layout/fragment_form" >
+        tools:layout="@layout/fragment_form">
+        <argument
+            android:name="conceptArg"
+            android:defaultValue="empty"
+            app:argType="string" />
+        <argument
+            android:name="amountArg"
+            android:defaultValue="0"
+            app:argType="integer" />
         <action
             android:id="@+id/action_formFragment_to_submitFragment"
-            app:destination="@id/submitFragment" />
+            app:destination="@+id/submit_fragment_destination"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
-        android:id="@+id/submitFragment"
+        android:id="@+id/submit_fragment_destination"
         android:name="app.navigation.jetpack.guillermo.example.com.navigationapp.SubmitFragment"
         android:label="fragment_submit"
-        tools:layout="@layout/fragment_submit" >
+        tools:layout="@layout/fragment_submit">
         <action
             android:id="@+id/action_submitFragment_to_resultFragment"
-            app:destination="@id/resultFragment" />
+            app:destination="@id/result_fragment_destination" />
     </fragment>
     <fragment
-        android:id="@+id/resultFragment"
+        android:id="@+id/result_fragment_destination"
         android:name="app.navigation.jetpack.guillermo.example.com.navigationapp.ResultFragment"
         android:label="fragment_result"
-        tools:layout="@layout/fragment_result" />
+        tools:layout="@layout/fragment_result" >
+        <action
+            android:id="@+id/action_result_fragment_destination_to_form_fragment_destination"
+            app:destination="@id/form_fragment_destination" />
+    </fragment>
 </navigation>
