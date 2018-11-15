@@ -3,27 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/fragment_layout_bg"
-    android:elevation="4dp"
-    android:padding="16dp"
-    android:layout_margin="8dp"
-    android:clipToPadding="true"
+    android:layout_height="match_parent"
     tools:context=".SubmitFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.10" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/startGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="8dp" />
+        app:layout_constraintGuide_percent="0.10" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/endGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="8dp" />
+        app:layout_constraintGuide_percent="0.90" />
 
     <TextView
         android:id="@+id/tv_resume_transfer"
@@ -33,32 +35,32 @@
         android:text="@string/resume_transfer"
         android:textSize="@dimen/new_transfer_text_size"
         app:layout_constraintStart_toStartOf="@+id/startGuideline"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/topGuideline" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:background="@color/main_activity_background_color"
-        app:layout_constraintBottom_toTopOf="@+id/concept_resume"
+        app:layout_constraintBottom_toTopOf="@+id/tv_concept_resume"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_resume_transfer" />
 
     <TextView
-        android:id="@+id/concept_resume"
+        android:id="@+id/tv_concept_resume"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:fontFamily="sans-serif-condensed"
         android:textSize="22sp"
-        android:layout_marginTop="24dp"
-        tools:text="@tools:sample/lorem"
-        app:layout_constraintBottom_toTopOf="@+id/amount_resume"
+        app:layout_constraintBottom_toTopOf="@+id/tv_amount_resume"
         app:layout_constraintEnd_toEndOf="@id/endGuideline"
         app:layout_constraintStart_toStartOf="@id/startGuideline"
-        app:layout_constraintTop_toBottomOf="@+id/tv_resume_transfer" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_resume_transfer"
+        tools:text="@tools:sample/lorem" />
 
     <TextView
-        android:id="@+id/amount_resume"
+        android:id="@+id/tv_amount_resume"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -66,29 +68,33 @@
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="@id/endGuideline"
         app:layout_constraintStart_toStartOf="@id/startGuideline"
-        app:layout_constraintTop_toBottomOf="@+id/concept_resume"
+        app:layout_constraintTop_toBottomOf="@+id/tv_concept_resume"
         tools:text="$ 23" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/resume_cancel_button"
         style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:insetBottom="0dp"
         android:text="CANCEL"
-        app:layout_constraintTop_toBottomOf="@id/amount_resume"
+        app:backgroundTint="#FF6859"
+        app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/startGuideline" />
+        app:layout_constraintEnd_toStartOf="@+id/resume_accept_button"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/resume_accept_button"
         style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:insetBottom="0dp"
         android:text="ACCEPT"
-        app:layout_constraintTop_toBottomOf="@+id/amount_resume"
+        app:cornerRadius="0dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/endGuideline" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/resume_cancel_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

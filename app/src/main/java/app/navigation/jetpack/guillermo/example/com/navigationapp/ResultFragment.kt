@@ -33,6 +33,7 @@ class ResultFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        tv_result.text = resultConcept.plus(resultAmount)
+        tv_concept_result.text = resultConcept
+        tv_amount_result.text = resultAmount.toString()
     }
 }

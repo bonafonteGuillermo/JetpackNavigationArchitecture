@@ -34,8 +34,8 @@ class SubmitFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        amount_resume.text = getString(R.string.resume_amount_value,amountValue.toString())
-        concept_resume.text = conceptValue
+        tv_amount_resume.text = getString(R.string.resume_amount_value,amountValue.toString())
+        tv_concept_resume.text = conceptValue
 
         resume_cancel_button.setOnClickListener{
             findNavController().navigateUp()
