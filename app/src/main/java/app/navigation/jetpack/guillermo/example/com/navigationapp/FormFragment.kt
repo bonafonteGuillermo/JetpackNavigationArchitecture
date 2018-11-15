@@ -29,7 +29,6 @@ class FormFragment : Fragment() {
             if(!inputAmountValue.isBlank()) action.setAmountArg(inputAmountValue.toInt()) else action.setAmountArg(0)
             action.setConceptArg(text_input_edit_text_concept.text.toString())
             findNavController().navigate(action)
-
         }
     }
 }

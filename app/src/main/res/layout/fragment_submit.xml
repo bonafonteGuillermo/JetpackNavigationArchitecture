@@ -3,52 +3,92 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".SubmitFragment"
-    android:padding="16dp">
+    android:layout_height="wrap_content"
+    android:background="@drawable/fragment_layout_bg"
+    android:elevation="4dp"
+    android:padding="16dp"
+    android:layout_margin="8dp"
+    android:clipToPadding="true"
+    tools:context=".SubmitFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="8dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="8dp" />
 
     <TextView
-        android:id="@+id/amount_resume"
-        android:layout_width="0dp"
+        android:id="@+id/tv_resume_transfer"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/resume_transfer"
+        android:textSize="@dimen/new_transfer_text_size"
+        app:layout_constraintStart_toStartOf="@+id/startGuideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/main_activity_background_color"
         app:layout_constraintBottom_toTopOf="@+id/concept_resume"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
-        tools:text="Submit" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_resume_transfer" />
 
     <TextView
         android:id="@+id/concept_resume"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="22sp"
+        android:layout_marginTop="24dp"
+        tools:text="@tools:sample/lorem"
+        app:layout_constraintBottom_toTopOf="@+id/amount_resume"
+        app:layout_constraintEnd_toEndOf="@id/endGuideline"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/tv_resume_transfer" />
+
+    <TextView
+        android:id="@+id/amount_resume"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/eczar_regular"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="@id/endGuideline"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/concept_resume"
+        tools:text="$ 23" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/resume_cancel_button"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="CANCEL"
+        app:layout_constraintTop_toBottomOf="@id/amount_resume"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/startGuideline" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/resume_accept_button"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="ACCEPT"
         app:layout_constraintTop_toBottomOf="@+id/amount_resume"
-        tools:text="@tools:sample/lorem" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/material_button"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Test"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/material_icon_button"
-        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="okd"
-        app:icon="@drawable/ic_confirm_form"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="@id/endGuideline" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

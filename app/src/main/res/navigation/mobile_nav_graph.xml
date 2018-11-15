@@ -33,12 +33,24 @@
             app:argType="string" />
         <action
             android:id="@+id/action_submit_fragment_destination_to_result_fragment_destination"
-            app:destination="@id/result_fragment_destination" />
+            app:destination="@id/result_fragment_destination"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/result_fragment_destination"
         android:name="app.navigation.jetpack.guillermo.example.com.navigationapp.ResultFragment"
         android:label="fragment_result"
         tools:layout="@layout/fragment_result">
+        <argument
+            android:name="acceptedAmountArg"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="acceptedConceptArg"
+            android:defaultValue="Not defined"
+            app:argType="string" />
     </fragment>
 </navigation>

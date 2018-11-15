@@ -15,9 +15,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-            <!--<nav-graph android:value="@navigation/mobile_nav_graph" />-->
-
         </activity>
     </application>
 </manifest>
