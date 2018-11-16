@@ -38,7 +38,6 @@ class ListTransfers : Fragment() {
         var action
                 = ListTransfersDirections.actionListTransfersToDetailFragment()
         action.setItem(item)
-
-
+        findNavController().navigate(action)
     }
 }

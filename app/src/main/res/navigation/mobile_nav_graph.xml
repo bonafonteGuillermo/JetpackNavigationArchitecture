@@ -98,6 +98,5 @@
             android:defaultValue="@null"
             app:argType="app.navigation.jetpack.guillermo.example.com.navigationapp.Transfer"
             app:nullable="true" />
-
     </fragment>
 </navigation>
