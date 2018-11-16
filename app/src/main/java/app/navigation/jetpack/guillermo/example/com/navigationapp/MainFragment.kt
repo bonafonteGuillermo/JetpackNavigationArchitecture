@@ -1,13 +1,11 @@
 package app.navigation.jetpack.guillermo.example.com.navigationapp
 
-
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import kotlinx.android.synthetic.main.fragment_form.*
 import kotlinx.android.synthetic.main.fragment_main.*
 
 
@@ -28,6 +26,11 @@ class MainFragment : Fragment() {
 
         material_card_view_new_transfer.setOnClickListener {
             val action= MainFragmentDirections.actionMainFragmentToFormFragmentDestination()
+            findNavController().navigate(action)
+        }
+
+        material_card_view_view_transfer.setOnClickListener {
+            val action= MainFragmentDirections.actionMainFragmentDestinationToListTransfers()
             findNavController().navigate(action)
         }
     }
