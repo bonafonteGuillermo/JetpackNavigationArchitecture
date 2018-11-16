@@ -1,6 +1,5 @@
 package app.navigation.jetpack.guillermo.example.com.navigationapp
 
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,5 +17,4 @@ class DetailFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_detail, container, false)
     }
-
 }
