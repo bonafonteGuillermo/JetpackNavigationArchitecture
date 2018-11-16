@@ -23,7 +23,7 @@
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 
     <fragment
@@ -92,6 +92,12 @@
         android:id="@+id/detailFragment"
         android:name="app.navigation.jetpack.guillermo.example.com.navigationapp.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="item"
+            android:defaultValue="@null"
+            app:argType="app.navigation.jetpack.guillermo.example.com.navigationapp.Transfer"
+            app:nullable="true" />
 
+    </fragment>
 </navigation>

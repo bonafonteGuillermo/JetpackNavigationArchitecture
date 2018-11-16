@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import app.navigation.jetpack.guillermo.example.com.navigationapp.R.string.resume_amount_value
 import kotlinx.android.synthetic.main.transfer_item.view.*
 import kotlin.properties.Delegates
 
@@ -28,7 +29,7 @@ class TransferAdapter(data: List<Transfer> = emptyList(), private val listener: 
 
         fun bind(item: Transfer) = with(itemView) {
             tv_concept_item.text = item.concept
-            tv_amount_item.text = item.amount.toString()
+            tv_amount_item.text = context.getString(resume_amount_value,item.amount.toString())
             setOnClickListener { listener(item) }
         }
     }

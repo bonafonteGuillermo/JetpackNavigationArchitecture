@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_list_transfers.*
 
 /**
@@ -34,6 +35,10 @@ class ListTransfers : Fragment() {
     }
 
     private fun itemClicked(item: Transfer) {
+        var action
+                = ListTransfersDirections.actionListTransfersToDetailFragment()
+        action.setItem(item)
+
 
     }
 }

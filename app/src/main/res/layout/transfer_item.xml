@@ -5,9 +5,10 @@
     android:id="@+id/transfer_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:elevation="2dp"
     android:background="@drawable/transfer_item_background"
     android:paddingStart="16dp"
-    android:layout_margin="16dp">
+    android:layout_margin="8dp">
 
     <TextView
         android:id="@+id/tv_concept_item"
