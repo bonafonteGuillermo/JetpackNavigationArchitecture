@@ -42,7 +42,8 @@ class SubmitFragment : Fragment() {
         }
 
         resume_accept_button.setOnClickListener{
-            var action = SubmitFragmentDirections.ActionSubmitFragmentDestinationToResultFragmentDestination()
+            var action =
+                    SubmitFragmentDirections.ActionSubmitFragmentDestinationToResultFragmentDestination()
             action.setAcceptedAmountArg(amountValue)
             action.setAcceptedConceptArg(conceptValue)
             findNavController().navigate(action)
