@@ -37,15 +37,6 @@
         app:layout_constraintStart_toStartOf="@+id/startGuideline"
         app:layout_constraintTop_toBottomOf="@+id/topGuideline" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:background="@color/main_activity_background_color"
-        app:layout_constraintBottom_toTopOf="@+id/text_input_layout_concept"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_new_transfer" />
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_input_layout_concept"
         android:layout_width="0dp"

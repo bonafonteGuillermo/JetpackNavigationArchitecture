@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_nav_graph"
-    app:startDestination="@id/main_fragment_destination">
+    app:startDestination="@id/form_fragment_destination">
 
     <fragment
         android:id="@+id/main_fragment_destination"
@@ -59,7 +59,7 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
-            app:popUpTo="@+id/main_fragment_destination" />
+            app:popUpTo="@+id/form_fragment_destination" />
     </fragment>
     <fragment
         android:id="@+id/result_fragment_destination"
